@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu EduPortal</title>
+
+<style>
+/* ===== RESET ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+  background:#ffffff;
+  padding:15px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* LOGO */
+.logo{
+  font-size:22px;
+  font-weight:bold;
+  color:#3b6fd8;
+}
+
+/* MENU */
+.menu{
+  list-style:none;
+  display:flex;
+  gap:25px;
+}
+
+.menu li a{
+  text-decoration:none;
+  color:#333;
+  font-weight:500;
+  transition:0.3s;
+}
+
+.menu li a:hover{
+  color:#3b6fd8;
+}
+
+/* BUTTON MENU */
+.menu .btn{
+  background:#ffc83d;
+  padding:8px 15px;
+  border-radius:8px;
+}
+
+/* ICON MOBILE */
+.menu-toggle{
+  display:none;
+  font-size:26px;
+  cursor:pointer;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .menu{
+    display:none;
+    position:absolute;
+    top:65px;
+    right:8%;
+    background:#fff;
+    flex-direction:column;
+    width:200px;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .menu.active{
+    display:flex;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="logo">EduPortal</div>
+
+  <ul class="menu" id="menu">
+    <li><a href="#beranda">Beranda</a></li>
+    <li><a href="#kategori">Kategori</a></li>
+    <li><a href="#berita">Berita</a></li>
+    <li><a href="#galeri">Galeri</a></li>
+    <li><a href="#forum">Forum</a></li>
+    <li><a href="#kontak" >Kontak</a></li>
+  </ul>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</nav>
+
+<!-- ===== CONTOH SECTION ===== -->
+<!-- ===== BERANDA ===== -->
+<section id="beranda" class="hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h1 class="fw-bold">Selamat Datang di EduPortal</h1>
+        <p class="mt-3">
+          Portal Pendidikan Digital untuk belajar, berdiskusi, dan berbagi ilmu secara online.
+        </p>
+        <button class="btn btn-warning mt-3">Jelajahi Sekarang</button>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" width="300">
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== KATEGORI ===== -->
+<section id="kategori">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">Kategori Populer</h2>
+    <div class="row g-4">
+      <div class="col-md-4"><div class="card p-4 kategori-card">Pendidikan</div></div>
+      <div class="col-md-4"><div class="card p-4 kategori-card">Sains</div></div>
+      <div class="col-md-4"><div class="card p-4 kategori-card">Komputer</div></div>
+      <div class="col-md-4"><div class="card p-4 kategori-card">Bahasa</div></div>
+      <div class="col-md-4"><div class="card p-4 kategori-card">Matematika</div></div>
+      <div class="col-md-4"><div class="card p-4 kategori-card">Bisnis</div></div>
+    </div>
+  </div>
+</section>
+<!-- ===== BERITA ===== -->
+<section id="berita" class="bg-light">
+  <div class="container">
+    <h2 class="fw-bold mb-4 text-center">Berita Pendidikan Terbaru</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card p-3">
+          <h5>Tips Sukses Belajar Online</h5>
+          <p>Strategi efektif mengikuti pembelajaran daring.</p>
+          <button class="btn btn-primary btn-sm" onclick="bacaBerita()">Baca Selengkapnya</button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card p-3">
+          <h5>Peran Teknologi dalam Pendidikan</h5>
+          <p>Pemanfaatan teknologi digital di dunia akademik.</p>
+          <button class="btn btn-primary btn-sm" onclick="bacaBerita()">Baca Selengkapnya</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== GALERI ===== -->
+<section id="galeri">
+  <div class="container">
+    <h2 class="fw-bold mb-4 text-center">Galeri Belajar</h2>
+     <div class="row g-3">
+      <!-- Gambar Besar -->
+      <div class="col-md-6">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" 
+               class="img-fluid gallery-img" 
+               data-title="Diskusi Kelompok">
+          <span>Diskusi Kelompok</span>
+        </div>
+      </div>
+
+      <!-- Gambar Kecil Kanan -->
+      <div class="col-md-6">
+        <div class="row g-3">
+          <div class="col-6">
+            <div class="gallery-item small">
+              <img src="https://images.unsplash.com/photo-1588072432836-e10032774350"
+                   class="img-fluid gallery-img"
+                   data-title="Kelas Online">
+              <span>Kelas Online</span>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="gallery-item small">
+              <img src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f"
+                   class="img-fluid gallery-img"
+                   data-title="Belajar Programming">
+              <span>Belajar Programming</span>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="gallery-item small">
+              <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f"
+                   class="img-fluid gallery-img"
+                   data-title="Ruang Perpustakaan">
+              <span>Ruang Perpustakaan</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal Popup -->
+<div class="modal fade" id="galleryModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="galleryTitle"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img id="galleryPreview" class="img-fluid rounded">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ===== FORUM ===== -->
+<section id="forum" class="bg-light">
+  <div class="container">
+    <h2 class="fw-bold mb-4 text-center">Forum Diskusi Mahasiswa</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card p-4">
+          <h5>HTML & CSS</h5>
+          <p>Belajar dasar web development.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-4">
+          <h5>Data Science</h5>
+          <p>Dasar analisis dan pengolahan data.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-4">
+          <h5>Bahasa Pemrograman</h5>
+          <p>Logika dan algoritma pemula.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOTSTRAP -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+/* ===== GLOBAL ===== */
+body{
+  scroll-behavior:smooth;
+}
+
+/* ===== HERO ===== */
+.hero{
+  background:linear-gradient(135deg,#3b6fd8,#6fa8ff);
+  color:#fff;
+  padding:100px 0;
+}
+
+/* ===== SECTION ===== */
+section{
+  padding:80px 0;
+}
+
+/* ===== CARD ===== */
+.card{
+  border:none;
+  border-radius:15px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* ===== KATEGORI ===== */
+.kategori-card:hover{
+  background:#3b6fd8;
+  color:#fff;
+  transition:0.3s;
+}
+
+/* ===== GALERI ===== */
+.gallery img{
+  border-radius:12px;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:#1f2e55;
+  color:#fff;
+  padding:30px 0;
+}
+</style>
+</head>
+<!-- ===== KONTAK ===== -->
+<section id="forum" class="bg-light">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-3">Hubungi Kami</h2>
+    <p>Bergabung dan diskusi bersama EduPortal</p>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <input type="email" id="email" class="form-control mb-3" placeholder="Masukkan Email">
+        <button class="btn btn-warning" onclick="kirimEmail()">Kirim</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="text-center">
+  <p>© 2026 EduPortal | Portal Pendidikan Digital</p>
+</footer>
+
+<!-- ===== JS ===== -->
+<script>
+function bacaBerita(){
+  alert("Menuju halaman detail berita...");
+}
+
+function kirimEmail(){
+  let email=document.getElementById("email").value;
+  if(email===""){
+    alert("Email tidak boleh kosong!");
+  }else{
+    alert("Terima kasih, email berhasil dikirim!");
+    document.getElementById("email").value="";
+  }
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+/* ===== JS MENU ===== */
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
