@@ -42,7 +42,7 @@
       <button id="btnJelajah" class="btn btn-warning">Jelajahi Sekarang</button>
     </div>
     <div class="col-md-6 text-center">
-      <img src="gambar/uas gmbr.jpeg" alt="ilustrasi EduPortal"
+      <img src="gmbr/uas gmbr.jpeg" alt="ilustrasi EduPortal"
         class"img-fluid">
     </div>
   </div>
@@ -165,7 +165,7 @@
   <div class="card mb-3 shadow-sm">
     <div class="row g-0 align-items-center">
       <div class="col-md-4">
-        <img src="gambar/org.jpeg" class="img-fluid rounded-start" alt="Berita Pendidikan">
+        <img src="gmbr/org.jpeg" class="img-fluid rounded-start" alt="Berita Pendidikan">
       </div>
       <div class="col-md-8">
         <div class="card-body">
@@ -180,7 +180,7 @@
   <div class="card mb-3 shadow-sm">
     <div class="row g-0 align-items-center">
       <div class="col-md-4">
-        <img src="gambar/org1.jpeg" class="img-fluid rounded-start" alt="Teknologi Pendidikan">
+        <img src="gmbr/org1.jpeg" class="img-fluid rounded-start" alt="Teknologi Pendidikan">
       </div>
       <div class="col-md-8">
         <div class="card-body">
@@ -195,7 +195,7 @@
   <div class="card mb-3 shadow-sm">
     <div class="row g-0 align-items-center">
       <div class="col-md-4">
-        <img src="gambar/org2.jpeg" class="img-fluid rounded-start" alt="Belajar Coding">
+        <img src="gmbr/org2.jpeg" class="img-fluid rounded-start" alt="Belajar Coding">
       </div>
       <div class="col-md-8">
         <h5>Kenapa Belajar Coding Penting untuk Masa Depan?</h5>
@@ -209,98 +209,22 @@
 <!-- FORUM -->
 <section class="container my-5">
   <h3 class="fw-bold mb-3">Forum Diskusi Mahasiswa</h3>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f5f5f5;
-    }
-    header {
-      background-color: #007bff;
-      color: white;
-      padding: 15px 20px;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    main {
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
-      background-color: white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      border-radius: 8px;
-      margin-top: 20px;
-    }
-    .topic {
-      border-bottom: 1px solid #ddd;
-      padding: 10px 0;
-    }
-    .topic:last-child {
-      border-bottom: none;
-    }
-    .topic h3 {
-      margin: 0;
-    }
-    .comments {
-      margin-top: 10px;
-    }
-    .comment {
-      border-top: 1px dashed #ccc;
-      padding: 5px 0;
-    }
-    form {
-      margin-top: 20px;
-    }
-    input[type="text"], textarea {
-      width: 100%;
-      padding: 8px;
-      margin: 5px 0 10px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-    }
-    button {
-      background-color: #007bff;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #0056b3;
-    }
-    footer {
-      text-align: center;
-      padding: 15px;
-      margin-top: 20px;
-      background-color: #007bff;
-      color: white;
-    }
-  </style>
-</head>
-<body>
   <div class="row g-3">
     <div class="col-md-4">
       <div class="card">
-        <img src="img/forum1.jpg" class="card-img-top">
+        <img src="gmbr/kelas html &css.jpeg" class="card-img-top">
         <div class="card-body text-center">Kelas HTML & CSS</div>
       </div>
     </div>
     <div class="col-md-4">
       <div class="card">
-        <img src="img/forum2.jpg" class="card-img-top">
+        <img src="gmbr/dasar data .jpeg" class="card-img-top">
         <div class="card-body text-center">Dasar Data Science</div>
       </div>
     </div>
     <div class="col-md-4">
       <div class="card">
-        <img src="img/forum3.jpg" class="card-img-top">
+        <img src="gmbr/bljr bhs dsr.jpeg" class="card-img-top">
         <div class="card-body text-center">Belajar Bahasa Dasar</div>
       </div>
     </div>
@@ -308,9 +232,33 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-primary text-white text-center py-3">
-  <p id="jam"></p>
-</footer>
+<footer class="footer">
+    <div>
+    &copy; 2026 | Nailah Khairina Zulfa — 251011700293 — 01SIFP005
+    </div>
+    <div id="timeDisplay" style="margin-top: 8px; font-size: 0.9em; color: #d14b4b;">
+    </div>
+  </footer>
+
+  <script>
+    function updateTime() {
+      const now = new Date();
+      const options = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      };
+      const timeString = now.toLocaleDateString('id-ID', options);
+      document.getElementById('timeDisplay').innerHTML = `📅 ${timeString}`;
+    }
+    updateTime();
+    setInterval(updateTime, 1000);
+  </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/script.js"></script>
